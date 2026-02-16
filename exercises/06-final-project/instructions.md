@@ -9,7 +9,7 @@
 ### Step 1: 論文を準備する
 `paper/` ディレクトリに論文ファイルを配置してください。
 - PDFでもMarkdownでもテキストでもOK
-- まだ準備がなければ `paper/sample-paper.md` のサンプルを使ってください
+- サンプル論文 `paper/kahneman-tversky-1974.pdf` がリポジトリに同梱されています
 
 ### Step 2: 論文を読み解く
 Claude Codeに論文を分析してもらいましょう。

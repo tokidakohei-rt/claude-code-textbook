@@ -13,8 +13,8 @@
 - **PDF** (.pdf) — Claude Codeが直接読める（Readツール）
 - **テキスト** (.txt) — そのまま読める
 
-> まだ論文を配置していない場合は、`paper/sample-paper.md` にサンプルがあります。
-> 自分の論文を使いたい場合は、`paper/` にファイルを置いてください。
+> サンプル論文として `paper/kahneman-tversky-1974.pdf`（Kahneman & Tversky, 1974「Judgment under Uncertainty: Heuristics and Biases」）が同梱されています。
+> 自分の論文を使いたい場合は、`paper/` に別のファイルを置いてもOKです。
 
 ## 論文読解のステップ
 

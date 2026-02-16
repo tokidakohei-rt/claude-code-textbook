@@ -6,6 +6,7 @@ Thumbs.db
 paper/
 output/
 !paper/.gitkeep
+!paper/kahneman-tversky-1974.pdf
 !output/.gitkeep
 
 # Secrets
