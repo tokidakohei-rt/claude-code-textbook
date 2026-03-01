@@ -9,6 +9,12 @@ Anthropic 公式 CLI ツール「Claude Code」を実践的に学ぶ教材シリ
 | [Vol.1](./vol1/) | 2時間で論文要約スライドを作る | 2時間 | 基本操作, Rules, Skills, Subagents |
 | [Vol.2](./vol2/) | 2時間で業界研究レポートを作る | 2時間 | Web検索, Hooks, パイプラインSkills, Agent Teams |
 
+### 補講
+
+| 補講 | タイトル | 時間 | 内容 |
+|------|---------|------|------|
+| [GitHub基礎](./supplement-github/) | Claude Code × GitHub | 1時間 | Git基本操作, GitHub, GitHub CLI, 実践ワークフロー |
+
 ## はじめ方
 
 ### Vol.1 から始める場合（Claude Code が初めての方）
@@ -27,6 +33,14 @@ claude
 # → 「始めよう」と話しかけてください
 ```
 
+### 補講: GitHub 基礎
+
+```bash
+cd claude-code-textbook/supplement-github
+claude
+# → 「始めよう」と話しかけてください
+```
+
 ## セットアップ
 
 各ボリュームの `SETUP.md` を参照してください:
@@ -37,6 +51,7 @@ claude
 
 | バージョン | 日付 | 変更内容 |
 |-----------|------|---------|
+| v0.2.1 | 2025-03-01 | 補講「Claude Code × GitHub」追加 |
 | v0.2.0 | 2025-03-01 | Vol.2 追加（業界研究レポート） |
 | v0.1.0 | 2025-02-17 | Vol.1 初版リリース（論文要約スライド） |
 
