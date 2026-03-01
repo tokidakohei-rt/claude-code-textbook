@@ -2,12 +2,19 @@
 .DS_Store
 Thumbs.db
 
-# Learner-specific content
-paper/
-output/
-!paper/.gitkeep
-!paper/kahneman-tversky-1974.pdf
-!output/.gitkeep
+# Learner-specific content (vol1)
+vol1/paper/*
+!vol1/paper/.gitkeep
+!vol1/paper/kahneman-tversky-1974.pdf
+vol1/output/*
+!vol1/output/.gitkeep
+
+# Learner-specific content (vol2)
+vol2/output/*
+!vol2/output/.gitkeep
+
+# Toolkit created by learner
+my-toolkit/
 
 # Secrets
 .env
