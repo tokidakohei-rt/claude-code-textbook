@@ -57,16 +57,15 @@
 2. 「ターミナル」と入力
 3. 表示された **ターミナル.app** を選択して Enter
 
-ターミナルが開いたら、以下を実行：
+ターミナルが開いたら、まず **Homebrew**（Mac 用のパッケージ管理ツール）をインストールします：
 
 ```bash
-git --version
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- 既にインストール済みなら、バージョンが表示されます → 完了
-- 未インストールの場合、Xcode Command Line Tools のインストールが提案されます → 指示に従ってインストール
+> すでに Homebrew が入っている場合は「Already installed」と表示されるので、そのまま次へ進んでください。
 
-**Homebrew を使う場合（任意）：**
+Homebrew が入ったら、Git をインストールします：
 
 ```bash
 brew install git
@@ -91,6 +90,23 @@ git --version
 git config --global user.name "あなたのユーザー名"
 git config --global user.email "あなたのメールアドレス"
 ```
+
+### 🎨 おすすめ: Starship でターミナルを見やすくする（任意）
+
+**Starship** を入れると、ターミナルに今いるフォルダや Git ブランチがカラフルに表示されるようになります。「今どこにいるの？」「どのブランチ？」が一目でわかるので、初心者の方にもおすすめです。
+
+```bash
+brew install starship
+```
+
+インストール後、以下を実行してシェルに設定を追加します：
+
+```bash
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+設定後、ターミナルのプロンプトが変わり、ディレクトリ名や Git ブランチ名が色付きで表示されるようになります。
 
 ---
 
