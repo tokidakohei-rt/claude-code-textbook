@@ -67,8 +67,9 @@ source ~/.zshrc
 
 ```bash
 brew --version
-# 例: Homebrew 4.x.x
 ```
+
+> 例: `Homebrew 4.x.x` のように表示されます
 
 ---
 
@@ -84,8 +85,9 @@ brew install git
 
 ```bash
 git --version
-# 例: git version 2.43.0
 ```
+
+> 例: `git version 2.43.0` のように表示されます
 
 ### 初期設定
 
@@ -148,8 +150,9 @@ gh auth login
 
 ```bash
 gh --version
-# 例: gh version 2.45.0
 ```
+
+> 例: `gh version 2.45.0` のように表示されます
 
 ---
 
@@ -165,8 +168,9 @@ brew install node
 
 ```bash
 node --version
-# v18.x.x 以上であればOK
 ```
+
+> `v18.x.x` 以上であればOKです
 
 > すでにインストール済みで v18 未満の場合は `brew upgrade node` でアップデートできます。
 
@@ -206,8 +210,9 @@ Claude Code を使うには、以下のいずれかが必要です:
 - **Anthropic API キー**（従量課金）
 - **Claude Pro / Max プラン**（月額定額で Claude Code を利用可能）
 
+初回起動時に認証を求められます:
+
 ```bash
-# 初回起動時に認証を求められます
 claude
 ```
 
@@ -240,24 +245,25 @@ GitHub 上のリポジトリを自分の Mac に取り込む方法です。
 
 ### 方法B: ターミナルからクローンする
 
+保存したいフォルダに移動（例: ホームディレクトリ）してからクローンします:
+
 ```bash
-# 保存したいフォルダに移動（例: ホームディレクトリ）
 cd ~
-
-# クローン
 git clone https://github.com/ユーザー名/リポジトリ名.git
-
-# クローンしたフォルダに移動
 cd リポジトリ名
 ```
 
 その後、VS Code / Cursor でフォルダを開きます:
 
-```bash
-# VS Code の場合
-code .
+VS Code の場合:
 
-# Cursor の場合
+```bash
+code .
+```
+
+Cursor の場合:
+
+```bash
 cursor .
 ```
 
@@ -305,25 +311,35 @@ sudo npm install -g @anthropic-ai/claude-code
 
 ### `claude` コマンドが見つからない
 
-```bash
-# パスが通っているか確認
-which claude
+パスが通っているか確認:
 
-# 見つからない場合、npm のグローバルパスを確認
-npm config get prefix
-# 表示されたパス/bin が PATH に含まれているか確認
+```bash
+which claude
 ```
+
+見つからない場合、npm のグローバルパスを確認:
+
+```bash
+npm config get prefix
+```
+
+表示されたパス/bin が PATH に含まれているか確認してください。
 
 ### Node.js のバージョンが古い
 
 ```bash
 node --version
-# v18 未満の場合
+```
 
-# Homebrew でアップデート
+v18 未満の場合、Homebrew でアップデート:
+
+```bash
 brew upgrade node
+```
 
-# nvm を使っている場合
+nvm を使っている場合:
+
+```bash
 nvm install --lts
 nvm use --lts
 ```
