@@ -96,6 +96,86 @@ PR #3 の内容を確認して、問題があれば教えて
 
 Claude Code が `gh pr view 3` や `gh pr diff 3` を使って PR の内容を読み、フィードバックを返します。
 
+## 実践: git worktree で並列作業する
+
+### worktree とは
+
+`git worktree` は **同じリポジトリの複数ブランチを別々のフォルダで同時に開ける** Git の機能です。
+
+通常はブランチを切り替えるとき `git checkout` でカレントディレクトリの内容が丸ごと書き換わりますが、worktree を使うと：
+
+- ブランチ A 用のフォルダ
+- ブランチ B 用のフォルダ
+- ブランチ C 用のフォルダ
+
+を **同時に存在させたまま** 作業できます。
+
+### Claude Code と相性が良い理由
+
+Claude Code は「フォルダ単位で1セッション」起動するのが基本です。worktree と組み合わせると、こんなことができます。
+
+1. **並列セッション**: メインのフォルダで機能開発を Claude Code に任せている間、別 worktree で別の Claude Code セッションを立ち上げて、バグ修正やレビューを並行で進められる
+2. **実験の隔離**: 「Claude にこのリファクタを丸ごと任せたい」というとき、worktree に独立したコピーを作って試せる。失敗したら worktree ごと捨てればいい
+3. **stash いらず**: 「途中だけど別のブランチを見たい」というときに `git stash` する必要がない
+
+### 基本的な使い方
+
+```bash
+# 新しい worktree を作成（新しいブランチも同時に作る）
+git worktree add ../myproject.wt/feat-login -b feat-login
+
+# 作成した worktree に移動
+cd ../myproject.wt/feat-login
+
+# Claude Code を起動して作業
+claude
+
+# 作業終了後、worktree を削除
+git worktree remove ../myproject.wt/feat-login
+```
+
+### Claude Code に頼む場合
+
+コマンドを覚えていなくても、Claude Code に頼めば OK です。
+
+```
+worktree を作って feat-login ブランチで作業したい
+```
+
+```
+今ある worktree 一覧を見せて
+```
+
+```
+feat-login の worktree を削除して
+```
+
+### おすすめのフォルダ構成
+
+worktree を散らかさないために、リポジトリと並べて専用フォルダを作るのがおすすめです。
+
+```
+~/Workspace/repos/myproject/           ← メインの worktree（main 追従）
+~/Workspace/repos/myproject.wt/        ← worktree 置き場
+  ├── feat-login/
+  ├── fix-bug-123/
+  └── experiment-refactor/
+```
+
+### 注意点
+
+- **`node_modules` などは共有されない**: worktree ごとに `npm install` が必要です（`.gitignore` 対象のファイルは worktree 間でコピーされません）
+- **`.env` ファイルも手動コピー**: 同じく `.gitignore` 対象なので、必要なら手動で持ってくる必要があります
+- **同じブランチを2か所で開けない**: Git の制約で、すでに別の worktree で開いているブランチは別フォルダで開けません
+
+### いつ使うか
+
+最初は使わなくても困りません。以下のような状況になったら検討してみてください。
+
+- 「機能開発の途中で緊急のバグ修正が必要になった」
+- 「Claude Code に長時間タスクを任せたいけど、その間に別の作業もしたい」
+- 「大きなリファクタを試したいけど、メインの作業環境は壊したくない」
+
 ## よくあるトラブルと対処法
 
 ### 「push が拒否された」

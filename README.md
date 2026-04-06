@@ -13,7 +13,14 @@ Anthropic 公式 CLI ツール「Claude Code」を実践的に学ぶ教材シリ
 
 | 補講 | タイトル | 時間 | 内容 |
 |------|---------|------|------|
-| [GitHub基礎](./supplement-github/) | Claude Code × GitHub | 1時間 | Git基本操作, GitHub, GitHub CLI, 実践ワークフロー |
+| [GitHub基礎](./supplement-github/) | Claude Code × GitHub | 1時間 | Git基本操作, GitHub, GitHub CLI, 実践ワークフロー, git worktree |
+
+### リファレンス
+
+| 資料 | 内容 |
+|------|------|
+| [Claude Code 基礎知識ガイド](./CLAUDE-CODE-FUNDAMENTALS.md) | Claude Code の機能・設定・運用の網羅的リファレンス |
+| [推奨ディレクトリ構造ガイド](./RECOMMENDED-DIRECTORY-STRUCTURE.md) | Claude Code 前提のローカルフォルダ設計のベストプラクティス |
 
 ## はじめ方
 
